@@ -67,5 +67,5 @@ jobs:
 
       - name: Install Spectral and lint template
         run: |
-          npm install -g @stoplight/spectral-cli@latest
-          spectral lint openapi.yaml --fail-severity error
+          npm install -g @stoplight/spectral-cli@6.11.1
+          spectral lint openapi.yaml --ruleset spectral:oas
