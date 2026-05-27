@@ -282,9 +282,9 @@ components:
           type: string
 
         attachmentUrl:
-          oneOf:
-          - type: string
-          - type: 'null'
+          type:
+            - string
+            - "null"
 
         channel:
           $ref: '#/components/schemas/NotificationChannel'
