@@ -1,11 +1,11 @@
 # Phân tích yêu cầu — vai Provider
 
-- Cặp đàm phán:
-- Product: A / B
-- Provider service:
-- Consumer service:
-- Người viết:
-- Ngày:
+- Cặp đàm phán: Pair 04 — Core Business → Notification
+- Product: A7
+- Provider service: Notification Service
+- Consumer service: Core Business Service
+- Người viết: Dương Công Hảo
+- Ngày: 20/05/2026
 
 ---
 
@@ -13,8 +13,8 @@
 
 | Resource | Mô tả | Thuộc tính bắt buộc | Thuộc tính tùy chọn |
 |---|---|---|---|
-| `<Resource 1>` |  |  |  |
-| `<Resource 2>` |  |  |  |
+| `AlertEvent` | Event cảnh báo do Core Business gửi để Notification xử lý | eventId, alertId, severity, message, timestamp, correlationId | channels |
+| `NotificationResult` | Kết quả xử lý gửi thông báo nội bộ | status, processedAt | deliveryDetails |
 
 ---
 
@@ -22,8 +22,8 @@
 
 | Method | Path | Mục đích | Consumer gọi khi nào? |
 |---|---|---|---|
-| POST | `/...` |  |  |
-| GET | `/.../{id}` |  |  |
+| POST | `/events/alert.created` | Gửi event khi alert mới được tạo | Khi hệ thống phát hiện cảnh báo mới |
+| GET | `/events/{id}` | Kiểm tra trạng thái event đã xử lý | Khi cần tra cứu trạng thái xử lý |
 
 ---
 
@@ -46,17 +46,17 @@ Tối thiểu 5 case.
 
 Ghi rõ những điểm user story chưa nói nhưng Provider cần giả định.
 
-- Giả định 1:
-- Giả định 2:
-- Giả định 3:
+- Giả định 1: severity là bắt buộc để Notification xác định mức ưu tiên gửi.
+- Giả định 2: eventId được dùng làm idempotency key để tránh xử lý trùng.
+- Giả định 3: Notification tự quyết định routing channel nếu Consumer không chỉ định.
 
 ---
 
 ## 5. Câu hỏi cho Consumer
 
-1. 
-2. 
-3. 
+1. Consumer có luôn gửi severity hay có thể để Notification tự suy luận?
+2. Consumer có cần chỉ định channel (email/Telegram/app) hay Notification tự chọn?
+3. Khi gửi lỗi downstream, Consumer muốn retry từ queue hay Notification tự retry?
 
 ---
 

@@ -1,11 +1,11 @@
 # Phân tích yêu cầu — vai Consumer
 
-- Cặp đàm phán:
-- Product: A / B
-- Consumer service:
-- Provider service:
-- Người viết:
-- Ngày:
+- Cặp đàm phán: Pair 04 — Core Business → Notification
+- Product: A7
+- Consumer service: Core Business Service
+- Provider service: Notification Service
+- Người viết: Dương Công Hảo
+- Ngày: 20/05/2026
 
 ---
 
@@ -13,8 +13,8 @@
 
 | Resource | Consumer dùng để làm gì? | Field bắt buộc với Consumer | Field có thể tùy chọn |
 |---|---|---|---|
-| `<Resource 1>` |  |  |  |
-| `<Resource 2>` |  |  |  |
+| `AlertEvent` | Gửi event cảnh báo để Notification xử lý và gửi thông báo | eventId, alertId, severity, message, timestamp, correlationId | channels |
+| `NotificationResult` | Nhận trạng thái xử lý hoặc tra cứu kết quả gửi thông báo | status, processedAt | deliveryDetails |
 
 ---
 
@@ -22,8 +22,8 @@
 
 | Method | Path | Lúc nào gọi? | Kỳ vọng response |
 |---|---|---|---|
-| POST | `/...` |  |  |
-| GET | `/.../{id}` |  |  |
+| POST | `/events/alert.created` | Khi có cảnh báo mới cần gửi thông báo | Event được queue và chấp nhận xử lý |
+| GET | `/events/{id}` | Khi cần tra cứu trạng thái xử lý của event | Trả về trạng thái xử lý event |
 
 ---
 
@@ -44,17 +44,17 @@ Tối thiểu 5 case.
 
 ## 4. Giả định bổ sung
 
-- Giả định 1:
-- Giả định 2:
-- Giả định 3:
+- Giả định 1: Notification xử lý event bất đồng bộ và không trả kết quả gửi ngay lập tức.
+- Giả định 2: eventId được dùng để tránh xử lý trùng khi retry.
+- Giả định 3: Notification có thể tự chọn channel nếu Consumer không truyền danh sách channel.
 
 ---
 
 ## 5. Câu hỏi cho Provider
 
-1. 
-2. 
-3. 
+1. Notification có bắt buộc severity để định tuyến hay có thể tự suy luận?
+2. Notification có retry downstream delivery nội bộ hay phụ thuộc queue?
+3. Nếu event bị trùng eventId thì Notification trả trạng thái gì?
 
 ---
 
