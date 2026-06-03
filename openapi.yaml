@@ -175,7 +175,7 @@ paths:
                   userId: USER-001
                   title: Emergency Alert
                   message: Fire detected in Building A
-                  attachmentUrl: null
+                  attachmentUrl: "null"
 
                   channel:
                     channelType: email
@@ -282,7 +282,7 @@ components:
           type: string
 
         attachmentUrl:
-          type:[string, "null"]
+          type: [string, "null"]
 
         channel:
           $ref: '#/components/schemas/NotificationChannel'
@@ -369,7 +369,7 @@ components:
           format: date-time
 
         deliveredAt:
-          type:[string, "null"]
+          type: [string, "null"]
           format: date-time
 
     Problem:
@@ -394,10 +394,10 @@ components:
           type: integer
 
         detail:
-          type:[string,"null"]
+          type: [string, "null"]
 
         instance:
-          type:[string,"null"]
+          type: [string, "null"]
   responses:
 
     BadRequest:
