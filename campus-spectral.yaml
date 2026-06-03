@@ -13,15 +13,6 @@ rules:
       functionOptions:
         match: ^3\.1\.0$
 
-  # ❌ FIX: tránh Spectral crash với nullable
-  campus-no-nullable:
-    description: Không dùng nullable trong OpenAPI 3.1 (tránh lỗi Spectral).
-    message: "Không nên dùng nullable. Dùng union type: [type, \"null\"]"
-    severity: off
-    given: "$.."
-    then:
-      function: truthy
-
   campus-require-problem-schema:
     description: API phải có schema Problem cho response lỗi.
     message: Thiếu components.schemas.Problem.
