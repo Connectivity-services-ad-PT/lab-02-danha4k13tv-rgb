@@ -282,9 +282,7 @@ components:
           type: string
 
         attachmentUrl:
-          anyOf:
-            - type: string
-            - type: 'null'
+          type:[string, "null"]
 
         channel:
           $ref: '#/components/schemas/NotificationChannel'
@@ -371,10 +369,8 @@ components:
           format: date-time
 
         deliveredAt:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: 'null'
+          type:[string, "null"]
+          format: date-time
 
     Problem:
       type: object
@@ -398,15 +394,10 @@ components:
           type: integer
 
         detail:
-          anyOf:
-            - type: string
-            - type: 'null'
+          type:[string,"null"]
 
         instance:
-          anyOf:
-            - type: string
-            - type: 'null'
-
+          type:[string,"null"]
   responses:
 
     BadRequest:
