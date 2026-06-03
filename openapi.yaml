@@ -362,18 +362,18 @@ components:
           type: string
           format: uuid
 
-      status:
-        type: string
-        enum: [PENDING, SUCCESS, FAILED]
+        status:
+          type: string
+          enum: [PENDING, SUCCESS, FAILED]
 
-      createdAt:
-        type: string
-        format: date-time
+        createdAt:
+          type: string
+          format: date-time
 
-      deliveredAt:
-        type:
-          - string
-          - "null"
+        deliveredAt:
+          type:
+            - string
+            - "null"
           format: date-time
 
     Problem:
