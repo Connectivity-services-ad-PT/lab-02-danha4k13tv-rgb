@@ -257,7 +257,7 @@ components:
 
         channelType:
           type: string
-          enum: [email, sms, push]
+          enum: ['email', 'sms', 'push']
 
         content:
           type: string
@@ -364,7 +364,7 @@ components:
 
         status:
           type: string
-          enum: [PENDING, SUCCESS, FAILED]
+          enum: ['PENDING', 'SUCCESS', 'FAILED']
 
         createdAt:
           type: string
