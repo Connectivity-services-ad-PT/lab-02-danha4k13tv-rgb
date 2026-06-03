@@ -313,7 +313,7 @@ components:
       properties:
         channelType:
           type: string
-          const: email
+          enum: ['email']
 
         email:
           type: string
@@ -329,7 +329,7 @@ components:
       properties:
         channelType:
           type: string
-          const: sms
+          enum: ['sms']
 
         phoneNumber:
           type: string
@@ -344,7 +344,7 @@ components:
       properties:
         channelType:
           type: string
-          const: push
+          enum: ['push']
 
         deviceToken:
           type: string
