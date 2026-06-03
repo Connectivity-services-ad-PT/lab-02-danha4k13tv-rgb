@@ -161,8 +161,8 @@ Consumer không được giả định rằng thông báo đã được gửi th
 
 # Chốt hợp đồng v1.0
 
-Provider sign-off: Notification Team  
-Consumer sign-off: Core Business Team  
+Provider sign-off: (A7)
+Consumer sign-off: (A6)
 Witness (GV/TA): ____________________  
 Date: 20/05/2026
 
