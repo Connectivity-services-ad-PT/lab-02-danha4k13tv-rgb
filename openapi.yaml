@@ -230,7 +230,7 @@ components:
       properties:
         status:
           type: string
-          enum: [ok]
+          enum: ['ok']
 
         service:
           type: string
@@ -282,9 +282,9 @@ components:
           type: string
 
         attachmentUrl:
-          type:
-            - string
-            - "null"
+          oneOf:
+            - type: string
+            - type: 'null'
 
         channel:
           $ref: '#/components/schemas/NotificationChannel'
@@ -371,10 +371,10 @@ components:
           format: date-time
 
         deliveredAt:
-          type:
-            - string
-            - "null"
-          format: date-time
+          oneOf:
+            - type: string
+              format: date-time
+            - type: 'null'
 
     Problem:
       type: object
