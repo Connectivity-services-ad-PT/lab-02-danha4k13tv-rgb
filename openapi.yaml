@@ -282,9 +282,9 @@ components:
           type: string
 
         attachmentUrl:
-          oneOf:
-            - type: string
-            - type: 'null'
+          type:
+            - string
+            - null
 
         channel:
           $ref: '#/components/schemas/NotificationChannel'
@@ -371,10 +371,9 @@ components:
           format: date-time
 
         deliveredAt:
-          oneOf:
-            - type: string
-              format: date-time
-            - type: 'null'
+          type:
+            - string
+            - null
 
     Problem:
       type: object
@@ -398,15 +397,14 @@ components:
           type: integer
 
         detail:
-          oneOf:
-            - type: string
-            - type: 'null'
+          type:
+            - string
+            - null
 
         instance:
-          oneOf:
-            - type: string
-              format: uri
-            - type: 'null'
+          type:
+            - string
+            - null
 
   responses:
 
