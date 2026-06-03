@@ -68,4 +68,4 @@ jobs:
       - name: Install Spectral and lint template
         run: |
           npm install -g @stoplight/spectral-cli@6.11.1
-          spectral lint openapi.yaml --ruleset spectral:oas
+          spectral lint openapi.yaml --ruleset campus-spectral.yaml
