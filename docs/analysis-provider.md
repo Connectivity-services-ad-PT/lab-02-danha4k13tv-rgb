@@ -4,7 +4,7 @@
 - Product: A7
 - Provider service: Notification Service
 - Consumer service: Core Business Service
-- Người viết: Dương Công Hảo
+- Người viết: Nguyễn Thanh Danh
 - Ngày: 20/05/2026
 
 ---

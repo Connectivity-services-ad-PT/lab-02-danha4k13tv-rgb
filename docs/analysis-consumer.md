@@ -1,10 +1,10 @@
 # Phân tích yêu cầu — vai Consumer
 
 - Cặp đàm phán: Pair 04 — Core Business → Notification
-- Product: A7
-- Consumer service: Core Business Service
-- Provider service: Notification Service
-- Người viết: Dương Công Hảo
+- Product: A6
+- Consumer service: Core Business (A6)
+- Provider service: Notification (A7)
+- Người viết: Trần Công Thưởng
 - Ngày: 20/05/2026
 
 ---
